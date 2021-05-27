@@ -1,0 +1,23 @@
+server:
+ port: 8080
+ servlet:
+  context-path: /bootcamp
+
+spring:
+ datasource:
+  driver-class-name: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/postgres
+  username: postgres
+  password: 123456
+
+ jpa:
+  show-sql: true
+  database-plataform: org.hibernate.dialect.PostgreSQLDialect
+  generated-ddl: false
+  hibernate:
+   ddl-auto: none
+
+application:
+ title_description: Projeto criado para o bootcamp DIO - Santander.
+ version: 1.0
+ description: Projeto criado para o bootcamp DIO - Santander durante a Santander Dev Week, de 24/05/2021 à 28/05/2021.
