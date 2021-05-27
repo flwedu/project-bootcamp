@@ -31,12 +31,13 @@ public class StockController {
 	/**
 	 * Método de criação de um novo objeto na base de dados.
 	 * <p>
-	 * <b>consumes</b> = tipo de dado aceito no RequestBody.
-	 * <p>
-	 * produces = tipo de dado que será respondido.
+	 * Os parâmetros expressos em {@code @PostMapping} indicam qual tipo de dados
+	 * serão aceitos no body da requisição, e qual tipo de dados serão retornados
+	 * também.
 	 * 
-	 * @param stockdto
-	 * @return
+	 * @param stockdto Objeto que encapsula os dados para criação de uma entidade.
+	 * @return Um {@link ResponseEntity}, com <b>header</b> e <b>body</b> contendo
+	 *         dados do objeto recém criado.
 	 */
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<StockDTO> save(@Valid @RequestBody StockDTO stockdto) {
@@ -63,15 +64,15 @@ public class StockController {
 
 		return ResponseEntity.ok(service.findById(id));
 	}
-	
+
 	@GetMapping(value = "today", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<StockDTO>> findByCurrentDate(){
-		
+	public ResponseEntity<List<StockDTO>> findByCurrentDate() {
+
 		return ResponseEntity.ok(service.findByCurrentDate());
 	}
-	
+
 	@DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<StockDTO> delete(@PathVariable Long id){
+	public ResponseEntity<StockDTO> delete(@PathVariable Long id) {
 		return ResponseEntity.ok(service.delete(id));
 	}
 }

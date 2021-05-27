@@ -9,7 +9,9 @@ import com.santanderdio.projectbootcamp.model.Stock;
 import com.santanderdio.projectbootcamp.model.dto.StockDTO;
 
 /**
- * Mapper é um objeto que converte um tipo de objeto em outro
+ * Mapper é um objeto que converte um tipo de objeto em outro. Nesse contexto,
+ * ele irá converter um objeto {@link Stock} para um {@link StockDTO}, e
+ * vice-versa.
  */
 @Component
 public class StockMapper {

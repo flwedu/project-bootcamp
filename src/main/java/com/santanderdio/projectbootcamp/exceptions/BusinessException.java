@@ -5,8 +5,6 @@ package com.santanderdio.projectbootcamp.exceptions;
  * via <b>throw new BusinessException</b> e que será capturado automaticamente
  * pelo {@link CustomExceptionsHandler}.
  * 
- * @author Eduardo
- *
  */
 public class BusinessException extends RuntimeException {
 

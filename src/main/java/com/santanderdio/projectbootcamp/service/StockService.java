@@ -55,35 +55,32 @@ public class StockService {
 		repository.save(stock);
 		return mapper.toDTO(stock);
 	}
-	
+
+	// O readOnly indica que será apenas uma transaction de consulta, sem alterações
+	// no banco de dados
 	@Transactional(readOnly = true)
-	public List<StockDTO> findAll(){
-		
+	public List<StockDTO> findAll() {
+
 		return mapper.toDTO(repository.findAll());
 	}
 
 	@Transactional(readOnly = true)
 	public StockDTO findById(Long id) {
-		
-		return repository.findById(id)
-				.map(mapper::toDTO)
-				.orElseThrow(NotFoundException::new);
+
+		return repository.findById(id).map(mapper::toDTO).orElseThrow(NotFoundException::new);
 	}
 
 	@Transactional(readOnly = true)
 	public List<StockDTO> findByCurrentDate() {
-		return repository.findByCurrentDate(LocalDate.now())
-				.map(mapper::toDTO)
-				.orElseThrow(NotFoundException::new);
+		return repository.findByCurrentDate(LocalDate.now()).map(mapper::toDTO).orElseThrow(NotFoundException::new);
 	}
-	
+
 	@Transactional
 	public StockDTO delete(Long id) {
 		StockDTO dto = findById(id);
 		repository.deleteById(dto.getId());
-		
+
 		return dto;
 	}
-
 
 }

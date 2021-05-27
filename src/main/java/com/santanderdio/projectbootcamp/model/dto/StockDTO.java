@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 
 /**
  * DTO é um padrão de objetos que abstrai as informações que serão recebidas da
- * interface de usuário para persistência posterior no banco de dados
+ * interface de usuário para persistência no banco de dados
  */
 public class StockDTO {
 

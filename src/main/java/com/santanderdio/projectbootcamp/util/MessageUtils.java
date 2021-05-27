@@ -1,5 +1,9 @@
 package com.santanderdio.projectbootcamp.util;
 
+/**
+ * Essa classe abstrai algumas mensagens que poderão ser utilizadas nos
+ * lançamentos de erros do projeto.
+ */
 public abstract class MessageUtils {
 
 	public static final String STOCK_ALREADY_EXISTS = "Stock already exists in the database";
